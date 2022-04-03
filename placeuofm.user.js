@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         PlaceUofM Bot
 // @namespace    https://github.com/Waley-Z/place-uofm-bot
-// @version      14
+// @version      17
 // @description  /r/place bot
 // @author       NoahvdAa, reckter, SgtChrome, nama17, Gugubo, Waley
 // @match        https://www.reddit.com/r/place/*
