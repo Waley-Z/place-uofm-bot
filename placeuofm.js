@@ -1,21 +1,19 @@
 // ==UserScript==
-// @name         PlaceTaskbar Bot
-// @namespace    https://github.com/r-placestart/place-taskbar-bot
+// @name         PlaceUofM Bot
+// @namespace    https://github.com/Waley-Z/place-uofm-bot
 // @version      14
 // @description  /r/place bot
-// @author       NoahvdAa, reckter, SgtChrome, nama17, Gugubo
+// @author       NoahvdAa, reckter, SgtChrome, nama17, Gugubo, Waley
 // @match        https://www.reddit.com/r/place/*
 // @match        https://new.reddit.com/r/place/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=reddit.com
 // @require	     https://cdn.jsdelivr.net/npm/toastify-js
 // @resource     TOASTIFY_CSS https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css
-// @updateURL    https://github.com/r-placestart/place-taskbar-bot/raw/main/placetaskbar.user.js
-// @downloadURL  https://github.com/r-placestart/place-taskbar-bot/raw/main/placetaskbar.user.js
+// @updateURL    https://github.com/Waley-Z/place-uofm-bot/raw/main/placeuofm.user.js
+// @downloadURL  https://github.com/Waley-Z/place-uofm-bot/raw/main/placeuofm.user.js
 // @grant        GM_getResourceText
 // @grant        GM_addStyle
 // ==/UserScript==
-
-// Sorry voor de rommelige code, haast en clean gaatn iet altijd samen ;)
 
 var placeOrders = [];
 var accessToken;
@@ -162,7 +160,7 @@ async function attemptPlace() {
 }
 
 function updateOrders() {
-	fetch(`https://raw.githubusercontent.com/r-placestart/place-taskbar-bot/main/pixel.json`, { cache: "no-store" }).then(async (response) => {
+	fetch(`https://raw.githubusercontent.com/Waley-Z/pixel/main/pixel.json`, { cache: "no-store" }).then(async (response) => {
 		if (!response.ok) return console.warn('Could not load orders!');
 		const data = await response.json();
 
@@ -181,11 +179,11 @@ function updateOrders() {
 		if (data?.version !== VERSION && !UPDATE_PENDING) {
 			UPDATE_PENDING = true
 			Toastify({
-				text: `NEW VERSION AVAILABLE! Update here: https://github.com/r-placestart/place-taskbar-bot`,
+				text: `NEW VERSION AVAILABLE! Update here: https://github.com/Waley-Z/place-uofm-bot`,
 				duration: -1,
 				onClick: () => {
 					// Tapermonkey captures this and opens a new tab
-					window.location = 'https://github.com/r-placestart/place-taskbar-bot/raw/main/placetaskbar.user.js'
+					window.location = 'https://github.com/Waley-Z/place-uofm-bot/raw/main/placeuofm.user.js'
 				}
 			}).showToast();
 
